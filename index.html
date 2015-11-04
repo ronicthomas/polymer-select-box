@@ -1,23 +1,17 @@
-<!DOCTYPE html>
-<html>
-<head>
+<!DOCTYPE html><html><head>
     <meta charset="UTF-8">
     <title>&lt;select-box&gt;</title>
-    <script src="bower_components/platform/platform.js"></script>
+    <script src="bower_components/webcomponentsjs/webcomponents-lite.js"></script>
     <link rel="import" href="src/select-box.html">
-    <link rel="import" href="bower_components/json-box/dist/json-box.html">
     <style>
         .slack {
             height: 5000px;
         }
     </style>
 </head>
-<body unresolved>
-    <template id="result" is="auto-binding">
-        available=
-        <json-box rows="1" json="{{ available }}"></json-box>
-        selected=
-        <json-box rows="1" json="{{ selected }}"></json-box>
+<body unresolved="">
+    <template id="result" is="dom-bind">
+
         The <code>&lt;select-box&gt;</code>:
         <select-box id="box" available="{{ available }}" selected="{{ selected }}"></select-box>
 
@@ -37,7 +31,7 @@
     <div class="slack"></div>
 
     <script>
-        window.addEventListener('polymer-ready', function() {
+        window.addEventListener('WebComponentsReady', function() {
             var result = document.getElementById('result'),
                 slow = document.getElementById('slow'),
                 other = document.getElementById('other');
@@ -59,5 +53,6 @@
             slow.focus();
         });
     </script>
-</body>
-</html>
+
+
+</body></html>
